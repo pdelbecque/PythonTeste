@@ -1,5 +1,14 @@
 import pyautogui
-pyautogui.screenshot('valider.png', region=(515, 531, 180, 25))
+import time
+
+print ("debut")
+time.sleep(30)
+x, y = pyautogui.position()
+positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
+print(positionStr, end='')
+
+pyautogui.screenshot('valider.png', region=(x, y, 180, 25))
+print("suite")
 location = pyautogui.locateOnScreen('valider.png')
 pyautogui.click(location)
 print(location)
